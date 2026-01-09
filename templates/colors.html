@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .swatch {
+            display: inline-block;
+            margin: 10px;
+            text-align: center;
+            font-family: sans-serif;
+        }
+        .color-box {
+            width: 100px; 
+            height: 100px; 
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <h1>Top 10 Colors</h1>
+    {% for count, color in color_counts %}
+    <div class="swatch">
+        <div class="color-box" style="background-color: rgb{{ color }};"></div>
+        <p><strong>{{ color }}</strong><br>{{ count }} pixels</p>
+    </div>
+    {% endfor %}
+    <br>
+    <a href="/">Upload another</a>
+</body>
+</html>
